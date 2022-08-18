@@ -9,14 +9,31 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[0],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
-        title: Text('Loading'),
+        backgroundColor: Colors.grey[800],
+        title: Text('START'),
         centerTitle: true,
         elevation: 0,
       ),
-      body: SafeArea(child: Text('welcome page')),
+      // Body content starts from here
+      body: SafeArea(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          // Button for Location and text
+          FlatButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            icon: const Icon(Icons.home),
+            label: const Text(
+              'START Home',
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
